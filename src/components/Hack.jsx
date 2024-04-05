@@ -5,6 +5,7 @@ const Hack = () => {
   const [search, setSearch] = useState("")
   const [user, setUser] = useState([]);
   const [error, setError] = useState("");
+  // const [delete, setDelete] = useState("")
 
   const SearchInput = (e) => {
     setSearch(e.target.value);
@@ -21,8 +22,8 @@ const Hack = () => {
       })
       .catch(function (error) {
         // handle error
-        console.log(error.data.message);
-        setError(error.data.message);
+        console.log(error.data.date.message);
+        setError(error.data.date.message);
       })
       .finally(function () {
         // always executed
@@ -80,28 +81,3 @@ const Hack = () => {
 
 export default Hack;
 
-// <tr>
-//   <th>1</th>
-//   <td>Cy Ganderton</td>
-//   <td>Quality Control Specialist</td>
-//   <td>Blue</td>
-// </tr>
-
-
-// .filter((item) => {
-//   if (search.toLowerCase() === "") {
-//     return true; 
-//   } else {
-//     return (
-//       item.name
-//         .toLowerCase()
-//         .includes(search.toLowerCase()) ||
-//       item.description
-//         .toLowerCase()
-//         .includes(search.toLowerCase()) ||
-//       item.completed
-//         .toLowerCase()
-//         .includes(search.toLowerCase())
-//     );
-//   }
-// })
