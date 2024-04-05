@@ -5,7 +5,6 @@ const Hack = () => {
   const [search, setSearch] = useState("")
   const [user, setUser] = useState([]);
   const [error, setError] = useState("");
-  // const [delete, setDelete] = useState("")
 
   const SearchInput = (e) => {
     setSearch(e.target.value);
@@ -22,8 +21,8 @@ const Hack = () => {
       })
       .catch(function (error) {
         // handle error
-        console.log(error.data.date.message);
-        setError(error.data.date.message);
+        console.log(error.data.message);
+        setError(error.data.message);
       })
       .finally(function () {
         // always executed
@@ -33,7 +32,7 @@ const Hack = () => {
     <>
       <div>
         <div className="flex flex-row gap-[20px] pt-[100x] items-center justify-center">
-        <input className="input text-black " onClick={SearchInput} placeholder="search" />
+        <input className="input text-black " onChange={SearchInput} value={search} placeholder="search" />
          <button className="btn" onClick={Getdata}> display data </button>
         </div>
         <div className="overflow-x-auto">
@@ -80,4 +79,3 @@ const Hack = () => {
 };
 
 export default Hack;
-
